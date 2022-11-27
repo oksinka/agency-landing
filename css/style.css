@@ -80,6 +80,7 @@ button {
     padding: 0 1vw;
     padding-top: 102px;
     padding-bottom: 110px;
+    background-color: #F6F2F2;
   }
   .page__header {
     margin: 0 auto;
@@ -94,8 +95,10 @@ button {
 
   /* Header */
   .header {
+    /* position: fixed; */
     display: flex;
     justify-content: center;
+    width: 100%;
     max-width: 1249px;
     min-height: 89px;
     margin: 0 auto;
@@ -152,9 +155,81 @@ button {
     background-color: #FF3F40;
   }
 
+  @media screen and (max-width: 800px) {
+    .site-menu {
+      display: none;
+    }
+  }
+    
+  /* Popup menu */
+
+  .popup-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .popup-menu__button {
+    display: block;
+    width: 300px;
+    height: 80px;
+    background-image: url(../img/menu-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    border: none;
+  }
+  .popup-menu__list {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0 30px;
+    list-style: none;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1;
+  }
+
+  .popup-menu__item {
+    display: flex;
+    min-height: 89px;
+  }
+
+  .popup-menu__link {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    color: #E0E0E0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+.popup-menu__link:hover {
+    background-color: #FF3F40;
+}
+
+  .popup-menu__link_active {
+    background-color: #FF3F40;
+  }
+
+  @media screen and (min-width: 800px) {
+    .popup-menu {
+      display: none;
+    }
+  }
+
+
   /* Main */
   /* Intro */
-
   .intro {
     display: flex;
     flex-wrap: wrap;
@@ -256,6 +331,7 @@ button {
     .intro__video {
         width: 100%;
         margin-bottom: 80px;
+        margin-top: 40px;
     }
   }
 
@@ -735,7 +811,7 @@ button {
   .feedback__about {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    width: 450px;
+    width: 752px;
     line-height: 1.75;
     margin: 0;
     margin-bottom: 50px;
@@ -749,7 +825,7 @@ button {
     grid-template-rows: auto;
   }
 
-  @media (max-width: 1000px) {
+  @media screen and (max-width: 1000px) {
     .feedback__body {
       padding: 0 1vw;
     }
@@ -818,6 +894,7 @@ button {
     background-color: #FF3B3B;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
+    font-weight: 700;
     text-transform: uppercase;
     color: #fff;
    }
@@ -839,13 +916,15 @@ button {
 
    .feedback__contacts {
     color: #fff;
-    background-color: rgba(45, 45, 45, 1)
-   }
-
-   .contacts {
+    background-color: rgba(45, 45, 45, 1);
     width: 315px;
     padding: 141px 71px 141px 79px;
    }
+
+   /* .contacts {
+    width: 315px;
+    padding: 141px 71px 141px 79px;
+   } */
 
    .contacts__heading {
     text-transform: uppercase;
@@ -881,37 +960,40 @@ button {
    }
 
    @media screen and (max-width: 1248px) {
-    .feedback__body {
-        grid-template-columns: 1fr auto 1fr;
-    }
-   .feedback__body::after {
-    content: none;
-   }
-   .feedback__form {
-    width: 100%;
-    grid-column: 2 / 3;
-    margin-right: initial;
-   }
-   .feedback__name {
-    width: 100%;
-    margin-right: initial;
-   }
-   .feedback__email {
-    width: 100%;
-   }
-   .feedback__textarea {
-    width: 100%;
-   }
-   .feedback__button {
-    width: 100%;
-   }
-   .feedback__contacts {
-    grid-column: 2 / 3;
-   }
-   .contacts {
-    width: auto;
-   }
-   }
+        .feedback__body {
+          margin: 0 1vw;
+            grid-template-columns: 1fr auto 1fr;
+        }
+      .feedback__body::after {
+        content: none;
+      }
+      .feedback__form {
+        width: 100%;
+        grid-column: 2 / 3;
+        margin-right: initial;
+      }
+      .feedback__name {
+        width: 100%;
+        margin-right: initial;
+      }
+      .feedback__email {
+        width: 100%;
+      }
+      .feedback__textarea {
+        width: 100%;
+      }
+      .feedback__button {
+        width: 100%;
+      }
+      .feedback__contacts {
+        margin-top: 40px;
+        width: 100%;
+        grid-column: 2 / 3;
+      }
+      /* .contacts {
+        width: auto;
+      } */
+  }
 
    /* Footer */
    .page__inner_dark-2 {
@@ -936,4 +1018,9 @@ button {
 .social {
     display: flex;
     gap: 18px;
+}
+
+/* JS */
+.hide {
+  display: none;
 }

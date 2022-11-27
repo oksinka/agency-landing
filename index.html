@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/popup-menu.js"></script>
 </head>
 
 <body class="page">
@@ -21,7 +22,16 @@
                     <li class="site-menu__item"><a class="site-menu__link site-menu__link_active" href="#">Home</a></li>
                     <li class="site-menu__item"><a class="site-menu__link" href="#feature">Portfolio</a></li>
                     <li class="site-menu__item"><a class="site-menu__link" href="#team">About us</a></li>
-                    <li class="site-menu__item"><a class="site-menu__link" href="">Contact</a></li>
+                    <li class="site-menu__item"><a class="site-menu__link" href="#feedback">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="popup-menu">
+                <button class="popup-menu__button"></button>
+                <ul class="popup-menu__list hide">
+                    <li class="popup-menu__item"><a class="popup-menu__link popup-menu__link_active" href="#">Home</a></li>
+                    <li class="popup-menu__item"><a class="popup-menu__link" href="#feature">Portfolio</a></li>
+                    <li class="popup-menu__item"><a class="popup-menu__link" href="#team">About us</a></li>
+                    <li class="popup-menu__item"><a class="popup-menu__link" href="#feedback">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -172,7 +182,7 @@
   <section class="feedback">
     <div class="feedback__header">
       <div class="feedback__inner">
-        <h2 class="feedback__heading" id="touch">get in touch</h2>
+        <h2 class="feedback__heading" id="feedback">get in touch</h2>
         <p class="feedback__about">Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor
              incididunt ut labore et.ur adipis cing elit, sed do eiusmod tempor incididunt ut labore et. ur adipis
               cing elit, sed do eiusmod tempor incididunt ut labore et.</p>
@@ -186,7 +196,7 @@
             <textarea class="feedback__textarea" placeholder="Type your message" name="textarea" id="#" cols="30" rows="10"></textarea>
             <button class="feedback__button" type="submit">Send message</button>
         </form>
-        <section class="feedback__contacts contacts">
+        <section class="feedback__contacts">
             <h3 class="contacts__heading" >Contact info</h3>
             <address class="contacts__address">Jalalabad 24 / A, Ambaarkhana, Sylhet, Bangladesh</address>
             <a class="contacts__email" href="mailto:redwan@deviserweb.com">redwan@deviserweb.com</a>
