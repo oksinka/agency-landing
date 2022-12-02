@@ -49,7 +49,6 @@ button {
 }
 
 /* Page */
-
 .page {
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
@@ -95,14 +94,23 @@ button {
 
   /* Header */
   .header {
-    /* position: fixed; */
     display: flex;
     justify-content: center;
     width: 100%;
     max-width: 1249px;
     min-height: 89px;
-    margin: 0 auto;
     background-color: rgba(0,0,0,0.8);
+  }
+
+  @media screen and (max-width: 800px) {
+    .header {
+      position: fixed;
+      top: 0;
+      z-index: 1;
+    }
+  }
+ .page__inner_header {
+    padding-top: 40px;
   }
 
   .site-menu {
@@ -162,7 +170,6 @@ button {
   }
     
   /* Popup menu */
-
   .popup-menu {
     position: relative;
     display: flex;
@@ -179,6 +186,7 @@ button {
     border-radius: 5px;
     border: none;
   }
+
   .popup-menu__list {
     position: absolute;
     left: 50%;
@@ -226,7 +234,6 @@ button {
       display: none;
     }
   }
-
 
   /* Main */
   /* Intro */
@@ -338,6 +345,7 @@ button {
   /* Services */
   .services {
     display: flex;
+    flex-wrap: wrap;
     max-width: 1249px;
     margin: 0 auto;
     padding: 0 1vw;
@@ -348,7 +356,7 @@ button {
   }
 
   .services__info {
-    width: 539px;
+    max-width: 539px;
   }
 
   .services__heading {
@@ -358,6 +366,11 @@ button {
     line-height: 72px;
     letter-spacing: 0.42px;
     text-transform: uppercase;
+  }
+
+  h2.services__heading {
+    margin-block-start: 0;
+    margin-block-end: 0.83em;
   }
 
   .services__about {
@@ -374,8 +387,16 @@ button {
     justify-content: end;
     gap: 13px;
     flex-wrap: wrap;
-    width: 610px;
+    max-width: 610px;
+    margin-top: 1.25em;
   }
+
+  /*@media screen and (max-width: 1190px){
+    .services{
+     width: 100%;
+     justify-content: center;
+    }
+  }*/
 
   .services__item {
     width: 285px;
@@ -463,7 +484,7 @@ button {
   }
 
   .feature__about {
-    width: 537px;
+    max-width: 537px;
     margin: 0 auto;
     margin-bottom: 34.5px;
     font-family: 'Open Sans', sans-serif;
@@ -527,10 +548,22 @@ button {
     gap: 20px;
   }
 
+  @media screen and (max-width: 1220px){
+    .feature__products {
+     width: 100%;
+     justify-content: center;
+    }
+
+    .filter__list {
+    justify-content: center;
+    }
+  }
+
   .feature__product {
     width: 297px;
     object-fit: cover;
     object-position: 0% 50%;
+    max-width: 50%;
   }
 
   .feature__product:hover {
@@ -565,7 +598,7 @@ button {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 28px;
-    width: 450px;
+    max-width: 450px;
     margin: 0;
     margin-bottom: 39px;
   }
@@ -733,7 +766,7 @@ button {
     padding: 150px 0 140px;
   }
 
-  .subscribe__heading {
+ .subscribe__heading {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 42px;
@@ -758,9 +791,8 @@ button {
   }
 
   .subscribe__email {
-    /* width: 100%; */
     width: 524px;
-    height: 79px;
+    min-height: 79px;
     padding: 0 36px;
     border: none;
     border-radius: 5px;
@@ -778,11 +810,19 @@ button {
     justify-content: center;
     align-items: center;
     width: 214px;
-    height: 79px;
+    min-height: 79px;
     border: none;
     border-radius: 5px;
     background-color: #FF2D2D;
   }
+
+  @media screen and (max-width: 1090px) {
+    .subscribe__email { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 
   /* Get in touch */
   .feedback {
@@ -816,7 +856,7 @@ button {
   .feedback__about {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    width: 752px;
+    max-width: 752px;
     line-height: 1.75;
     margin: 0;
     margin-bottom: 50px;
@@ -824,7 +864,6 @@ button {
 
   .feedback__body {
     display: flex;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
     grid-template-columns: 1fr 731px minmax(auto, 107px) 411px 1fr;
     grid-template-rows: auto;
@@ -865,7 +904,7 @@ button {
     .feedback__name {
     box-sizing: border-box;
     width: 339px;
-    height: 69px;
+    min-height: 69px;
     background-color: rgba(0,0,0,0.1);
     border: none;
     border-radius: 5px;
@@ -880,7 +919,7 @@ button {
    .feedback__email {
     box-sizing: border-box;
     width: 339px;
-    height: 69px;
+    min-height: 69px;
     background-color: rgba(0,0,0, 0.1);
     border: none;
     border-radius: 5px;
@@ -893,7 +932,7 @@ button {
 
    .feedback__button {
     width: 731px;
-    height: 75px;
+    min-height: 75px;
     border: none;
     border-radius: 5px;
     background-color: #FF3B3B;
@@ -908,7 +947,7 @@ button {
     box-sizing: border-box;
     resize: none;
     width: 731px;
-    height: 249px;
+    min-height: 249px;
     padding: 31px 51px;
     margin-bottom: 45px;
     background-color: rgba(0,0,0, 0.1);
